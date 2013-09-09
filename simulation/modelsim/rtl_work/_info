@@ -1,0 +1,73 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\School\Github\PRODIG\simulation\modelsim
+Eadc
+Z1 w1378723433
+Z2 DPx3 std 6 textio 0 22 G^o2zK;Vh4eVdKTVo98653
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\School\Github\PRODIG\simulation\modelsim
+Z5 8../../ADC.vhd
+Z6 F../../ADC.vhd
+l0
+L5
+VfN9GEmGJzWG2F8PLNJ[4e3
+Z7 OV;C;10.0c;49
+33
+Z8 !s108 1378723461.356000
+Z9 !s90 -reportprogress|300|-2008|-work|work|../../ADC.vhd|
+Z10 !s107 ../../ADC.vhd|
+Z11 o-2008 -work work -O0
+Z12 tExplicit 1
+!s100 G9l5Of@VXHik:cFfL3c6N0
+Ahardware
+R2
+R3
+DEx4 work 3 adc 0 22 fN9GEmGJzWG2F8PLNJ[4e3
+l24
+L17
+Van`SYK]<Ec=L=7`n6ijU`3
+R7
+33
+R8
+R9
+R10
+R11
+R12
+!s100 gjza]8_DBkoSSiM90b6Sk0
+Esim
+Z13 w1378723152
+Z14 DPx4 ieee 11 numeric_std 0 22 k7B<7GmYYYmX;0X]XHFD10
+R2
+R3
+R4
+Z15 8../../Sim.vhd
+Z16 F../../Sim.vhd
+l0
+L5
+VF<6X=9ka=0m:YPl?1e_>U2
+!s100 E[UIh0EXZ]5l:9=:E94TT0
+R7
+33
+Z17 !s108 1378723461.449000
+Z18 !s90 -reportprogress|300|-2008|-work|work|../../Sim.vhd|
+Z19 !s107 ../../Sim.vhd|
+R11
+R12
+Abehav
+R14
+R2
+R3
+DEx4 work 3 sim 0 22 F<6X=9ka=0m:YPl?1e_>U2
+l30
+L7
+Vd^>3F64cjjKS^SIkQg0<@3
+!s100 ZPj79d@Go71Ql@PolhC8R0
+R7
+33
+R17
+R18
+R19
+R11
+R12
