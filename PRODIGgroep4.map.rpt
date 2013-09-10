@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PRODIGgroep4
-Tue Sep 10 19:27:20 2013
+Tue Sep 10 21:26:59 2013
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,9 @@ Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |HallCounter|state
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: prescaler:ClockScaler
+ 10. Port Connectivity Checks: "prescaler:ClockScaler"
  11. Elapsed Time Per Partition
  12. Analysis & Synthesis Messages
 
@@ -43,16 +43,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Sep 10 19:27:20 2013         ;
+; Analysis & Synthesis Status        ; Successful - Tue Sep 10 21:26:59 2013         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PRODIGgroep4                                  ;
-; Top-level Entity Name              ; HallCounter                                   ;
+; Top-level Entity Name              ; HomeTrainer                                   ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 72                                            ;
-;     Total combinational functions  ; 71                                            ;
-;     Dedicated logic registers      ; 57                                            ;
-; Total registers                    ; 57                                            ;
-; Total pins                         ; 21                                            ;
+; Total logic elements               ; 0                                             ;
+;     Total combinational functions  ; 0                                             ;
+;     Dedicated logic registers      ; 0                                             ;
+; Total registers                    ; 0                                             ;
+; Total pins                         ; 114                                           ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 0                                             ;
 ; Embedded Multiplier 9-bit elements ; 0                                             ;
@@ -65,10 +65,10 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C15AF484C6      ;                    ;
-; Top-level entity name                                                      ; HallCounter        ; PRODIGgroep4       ;
+; Device                                                                     ; EP2C70F896C6       ;                    ;
+; Top-level entity name                                                      ; HomeTrainer        ; PRODIGgroep4       ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
-; Use smart compilation                                                      ; Off                ; Off                ;
+; Use smart compilation                                                      ; On                 ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
@@ -161,7 +161,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; HallCounter.vhd                  ; yes             ; User VHDL File  ; C:/Users/Mark/Documents/GitHub/PRODIG/HallCounter.vhd ;         ;
+; prescaler.vhd                    ; yes             ; User VHDL File  ; C:/Users/Mark/Documents/GitHub/PRODIG/prescaler.vhd   ;         ;
+; HomeTrainer.vhd                  ; yes             ; User VHDL File  ; C:/Users/Mark/Documents/GitHub/PRODIG/HomeTrainer.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
 
 
@@ -170,27 +171,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 72    ;
 ;                                             ;       ;
-; Total combinational functions               ; 71    ;
+; Total combinational functions               ; 0     ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 15    ;
-;     -- 3 input functions                    ; 23    ;
-;     -- <=2 input functions                  ; 33    ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 42    ;
-;     -- arithmetic mode                      ; 29    ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 57    ;
-;     -- Dedicated logic registers            ; 57    ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 21    ;
+; I/O pins                                    ; 114   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out                             ; 57    ;
-; Total fan-out                               ; 443   ;
-; Average fan-out                             ; 2.97  ;
 +---------------------------------------------+-------+
 
 
@@ -199,24 +196,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |HallCounter               ; 71 (71)           ; 57 (57)      ; 0           ; 0            ; 0       ; 0         ; 21   ; 0            ; |HallCounter        ;              ;
+; |HomeTrainer               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 114  ; 0            ; |HomeTrainer        ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------+
-; State Machine - |HallCounter|state                                                                            ;
-+----------------+----------------+----------------+---------------+---------------+---------------+------------+
-; Name           ; state.DelayOut ; state.WaitHigh ; state.Measure ; state.DelayIn ; state.WaitLow ; state.Rest ;
-+----------------+----------------+----------------+---------------+---------------+---------------+------------+
-; state.Rest     ; 0              ; 0              ; 0             ; 0             ; 0             ; 0          ;
-; state.WaitLow  ; 0              ; 0              ; 0             ; 0             ; 1             ; 1          ;
-; state.DelayIn  ; 0              ; 0              ; 0             ; 1             ; 0             ; 1          ;
-; state.Measure  ; 0              ; 0              ; 1             ; 0             ; 0             ; 1          ;
-; state.WaitHigh ; 0              ; 1              ; 0             ; 0             ; 0             ; 1          ;
-; state.DelayOut ; 1              ; 0              ; 0             ; 0             ; 0             ; 1          ;
-+----------------+----------------+----------------+---------------+---------------+---------------+------------+
 
 
 +------------------------------------------------------+
@@ -224,26 +206,34 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 57    ;
-; Number of registers using Synchronous Clear  ; 16    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 57    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 47    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |HallCounter|dataout[10]   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HallCounter|Selector5     ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |HallCounter|Selector3     ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |HallCounter|Selector7     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: prescaler:ClockScaler ;
++----------------+----------+----------------------------------------+
+; Parameter Name ; Value    ; Type                                   ;
++----------------+----------+----------------------------------------+
+; freqin         ; 50000000 ; Signed Integer                         ;
+; freqout        ; 10000    ; Signed Integer                         ;
++----------------+----------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "prescaler:ClockScaler"                                                                ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; clkout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -261,22 +251,176 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Sep 10 19:27:18 2013
+    Info: Processing started: Tue Sep 10 21:26:57 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PRODIGgroep4 -c PRODIGgroep4
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file hallcounter.vhd
     Info (12022): Found design unit 1: HallCounter-hardware
     Info (12023): Found entity 1: HallCounter
-Info (12127): Elaborating entity "HallCounter" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file prescaler.vhd
+    Info (12022): Found design unit 1: prescaler-behav
+    Info (12023): Found entity 1: prescaler
+Info (12021): Found 2 design units, including 1 entities, in source file hometrainer.vhd
+    Info (12022): Found design unit 1: HomeTrainer-structural
+    Info (12023): Found entity 1: HomeTrainer
+Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
+    Info (12022): Found design unit 1: Control-fsm_2proc
+    Info (12023): Found entity 1: Control
+Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
+    Info (12022): Found design unit 1: Counter-structural
+    Info (12023): Found entity 1: Counter
+Info (12021): Found 2 design units, including 1 entities, in source file seg_decoder.vhd
+    Info (12022): Found design unit 1: seg_decoder-behav
+    Info (12023): Found entity 1: seg_decoder
+Info (12021): Found 2 design units, including 1 entities, in source file teller.vhd
+    Info (12022): Found design unit 1: teller-rtl
+    Info (12023): Found entity 1: teller
+Info (12021): Found 2 design units, including 1 entities, in source file vier7segmentdecoder.vhd
+    Info (12022): Found design unit 1: vier7segmentdecoder-structural
+    Info (12023): Found entity 1: vier7segmentdecoder
+Info (12127): Elaborating entity "HomeTrainer" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(25): used implicit default value for signal "LEDG" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(26): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(27): used implicit default value for signal "HEX7_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(28): used implicit default value for signal "HEX6_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(29): used implicit default value for signal "HEX5_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(30): used implicit default value for signal "HEX4_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(31): used implicit default value for signal "HEX3_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(32): used implicit default value for signal "HEX2_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(33): used implicit default value for signal "HEX1_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at HomeTrainer.vhd(34): used implicit default value for signal "HEX0_D" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at HomeTrainer.vhd(92): object "CLOCK_10" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at HomeTrainer.vhd(92): object "startstop" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at HomeTrainer.vhd(92): object "mins" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at HomeTrainer.vhd(92): object "secs" assigned a value but never read
+Warning (10492): VHDL Process Statement warning at HomeTrainer.vhd(127): signal "BUTTON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at HomeTrainer.vhd(128): signal "BUTTON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at HomeTrainer.vhd(129): signal "BUTTON" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "prescaler" for hierarchy "prescaler:ClockScaler"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[3]" is stuck at GND
+    Warning (13410): Pin "LEDG[4]" is stuck at GND
+    Warning (13410): Pin "LEDG[5]" is stuck at GND
+    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[7]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "LEDR[16]" is stuck at GND
+    Warning (13410): Pin "LEDR[17]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX7_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX6_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX5_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX4_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX3_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX2_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX1_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[0]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[1]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[2]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[3]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[4]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[5]" is stuck at GND
+    Warning (13410): Pin "HEX0_D[6]" is stuck at GND
+    Warning (13410): Pin "HEX0_DP" is stuck at VCC
+    Warning (13410): Pin "HEX1_DP" is stuck at VCC
+    Warning (13410): Pin "HEX2_DP" is stuck at VCC
+    Warning (13410): Pin "HEX3_DP" is stuck at VCC
+    Warning (13410): Pin "HEX4_DP" is stuck at VCC
+    Warning (13410): Pin "HEX5_DP" is stuck at VCC
+    Warning (13410): Pin "HEX6_DP" is stuck at VCC
+    Warning (13410): Pin "HEX7_DP" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 72 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Tue Sep 10 19:27:20 2013
+Warning (21074): Design contains 23 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50"
+    Warning (15610): No output dependent on input pin "BUTTON[0]"
+    Warning (15610): No output dependent on input pin "BUTTON[1]"
+    Warning (15610): No output dependent on input pin "BUTTON[2]"
+    Warning (15610): No output dependent on input pin "BUTTON[3]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[2]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
+Info (21057): Implemented 114 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 91 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 134 warnings
+    Info: Peak virtual memory: 486 megabytes
+    Info: Processing ended: Tue Sep 10 21:26:59 2013
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

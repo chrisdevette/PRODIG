@@ -1,9 +1,0 @@
-
-State Machine - |HallCounter|state
-Name state.DelayOut state.WaitHigh state.Measure state.DelayIn state.WaitLow state.Rest 
-state.Rest 0 0 0 0 0 0 
-state.WaitLow 0 0 0 0 1 1 
-state.DelayIn 0 0 0 1 0 1 
-state.Measure 0 0 1 0 0 1 
-state.WaitHigh 0 1 0 0 0 1 
-state.DelayOut 1 0 0 0 0 1 

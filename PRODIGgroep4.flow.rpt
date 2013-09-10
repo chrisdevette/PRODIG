@@ -1,5 +1,5 @@
 Flow report for PRODIGgroep4
-Tue Sep 10 19:27:33 2013
+Tue Sep 10 21:27:18 2013
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 10 19:27:33 2013         ;
+; Flow Status                        ; Successful - Tue Sep 10 21:27:18 2013         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PRODIGgroep4                                  ;
-; Top-level Entity Name              ; HallCounter                                   ;
+; Top-level Entity Name              ; HomeTrainer                                   ;
 ; Family                             ; Cyclone II                                    ;
-; Device                             ; EP2C15AF484C6                                 ;
+; Device                             ; EP2C70F896C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 71 / 14,448 ( < 1 % )                         ;
-;     Total combinational functions  ; 71 / 14,448 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 57 / 14,448 ( < 1 % )                         ;
-; Total registers                    ; 57                                            ;
-; Total pins                         ; 21 / 315 ( 7 % )                              ;
+; Total logic elements               ; 0 / 68,416 ( 0 % )                            ;
+;     Total combinational functions  ; 0 / 68,416 ( 0 % )                            ;
+;     Dedicated logic registers      ; 0 / 68,416 ( 0 % )                            ;
+; Total registers                    ; 0                                             ;
+; Total pins                         ; 114 / 622 ( 18 % )                            ;
 ; Total virtual pins                 ; 0                                             ;
-; Total memory bits                  ; 0 / 239,616 ( 0 % )                           ;
-; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                ;
+; Total memory bits                  ; 0 / 1,152,000 ( 0 % )                         ;
+; Embedded Multiplier 9-bit elements ; 0 / 300 ( 0 % )                               ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                                 ;
 +------------------------------------+-----------------------------------------------+
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/10/2013 19:27:18 ;
+; Start date & time ; 09/10/2013 21:26:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PRODIGgroep4        ;
 +-------------------+---------------------+
@@ -73,19 +73,20 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1099021569989.137883403817920         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1099021569989.137884121808700         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_RUN_SCRIPT           ; Test.txt                              ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS        ; COMMAND_MACRO_MODE                    ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; HallCounter ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; HallCounter ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; HallCounter ; Top            ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; HomeTrainer ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; HomeTrainer ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; HomeTrainer ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; HallCounter                           ; PRODIGgroep4  ; --          ; --             ;
+; SMART_RECOMPILE                     ; On                                    ; Off           ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; HomeTrainer                           ; PRODIGgroep4  ; --          ; --             ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 
 
@@ -94,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 494 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 603 MB              ; 00:00:04                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 425 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 405 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 376 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:07     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 486 MB              ; 00:00:01                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 722 MB              ; 00:00:08                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 426 MB              ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 394 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 376 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:14                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
