@@ -9,7 +9,7 @@ port(
 	DB  		: in std_logic_vector(7 downto 0);
 	Busy 		: in std_logic;
 	conv 		: out std_logic;
-	rd   		: out std_logic:='1';
+	rd   		: out std_logic:='1'; -- Read
 	data 		: out std_logic_vector(7 downto 0)
 	);
 end entity ADC;
