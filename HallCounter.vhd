@@ -7,7 +7,7 @@ entity HallCounter is
 	port(	Clk_10k 	 	: in std_logic;
 			reset			: in std_logic;
 			Hallsensor  : in std_logic;
-			output 		: in std_logic; -- Signals to refresh output to new value
+			refresh 		: in std_logic; -- Signals to refresh output to new value
 			enable 		: in std_logic;
 			data 			: out unsigned(15 downto 0)
 			);
@@ -43,7 +43,7 @@ begin
 
 			if Usetemp = '0' then
 				dataout <= TotalCount;
-			elsif output = '1' and UseTemp = '1' then
+			elsif refresh = '1' and UseTemp = '1' then
 				dataout <= TempCount;
 				TempCount <= "0000000000000000";
 			end if;

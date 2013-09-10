@@ -27,7 +27,7 @@ entity prescaler is
 				freqout : positive := 10000
 				);
 	port (clkin  : in std_logic;
-			areset : in std_logic;
+			reset : in std_logic;
 			clkout : out std_logic
 			);
 end entity prescaler;
@@ -42,18 +42,18 @@ constant countmax : positive := ((freqin/2)/freqout)-1;
 -- We need to count up to some maximum...
 signal count : integer range 0 to countmax;
 begin
-	process (clkin, areset) is
+	process (clkin) is
 	-- Clkint is the internal clock (output), but as you know,
 	-- you cannot read an output signal...
 	variable clkint : std_logic;
 	begin
 		-- The global reset signal. Reset the lot.
-		if areset = '1' then
-			count <= 0;
-			clkint := '0';
-		elsif rising_edge(clkin) then
+		if rising_edge(clkin) then
+			if reset = '1' then
+				count <= 0;
+				clkint := '0';
 			-- If we're at the top...
-			if count = countmax then
+			elsif count = countmax then
 				-- Toggle the output clock and restart counting...
 				clkint := not clkint;
 				count <= 0;

@@ -24,6 +24,7 @@ entity HomeTrainer is
 			SW       : in std_logic_vector(17 downto 0);
 			LEDG     : out std_logic_vector(8 downto 0);
 			LEDR     : out std_logic_vector(17 downto 0);
+			IO_A		: inout std_logic_vector(31 downto 0);
 			HEX7_D   : out std_logic_vector(6 downto 0);
 			HEX6_D   : out std_logic_vector(6 downto 0);
 			HEX5_D   : out std_logic_vector(6 downto 0);
@@ -46,10 +47,28 @@ end entity HomeTrainer;
 architecture structural of HomeTrainer is
 	component prescaler is
 		port (clkin  : in std_logic;
-				areset : in std_logic;
+				reset : in std_logic;
 				clkout : out std_logic
 				);
 	end component prescaler;
+	component Timer is
+		port (clk:			in std_logic;
+				enable:		in std_logic;
+				reset:		in std_logic;
+				refresh:		out std_logic;
+				data:			out unsigned(15 downto 0)
+				);
+	end component Timer;
+	component HallCounter is
+		port(	Clk_10k 	 	: in std_logic;
+				reset			: in std_logic;
+				Hallsensor  : in std_logic;
+				refresh 		: in std_logic; -- Signals to refresh output to new value
+				enable 		: in std_logic;
+				data 			: out unsigned(15 downto 0)
+				);
+	end component HallCounter;
+
 --	component Control is
 --		 port (clk:    	in std_logic;
 --				 areset: 	in std_logic;
@@ -89,7 +108,11 @@ architecture structural of HomeTrainer is
 --				);
 --	end component vier7segmentdecoder;
 
-signal reset, CLOCK_10, : std_logic;
+signal reset, CLOCK_10, refresh, enable: std_logic;
+signal timerdata, countdata: unsigned(15 downto 0);
+signal LCD_Data, ADC_Data: std_logic_vector(7 downto 0);
+signal LCD_RS, LCD_RW, LCD_E, Servo_Positive, Servo_Negative, ADC_ConvStart, ADC_RD, ADC_Busy, Hallsensor: std_logic;
+signal BikeButtons: std_logic_vector(6 downto 1);
 
 -- Glue counting values with seven segment decoders
 signal digit0_2_data0 : unsigned(3 downto 0);
@@ -98,13 +121,33 @@ signal digit2_2_data2 : unsigned(3 downto 0);
 signal digit3_2_data3 : unsigned(3 downto 0);
 
 begin
-
+	
+	IO_A(0) <= LCD_RS;
+	IO_A(1) <= LCD_RW;
+	IO_A(2) <= LCD_E;
+	IO_A(10 downto 3) <= LCD_Data;
+	IO_A(11) <= Servo_Positive;
+	IO_A(12) <= Servo_Negative;
+	Hallsensor <= IO_A(13);
+	IO_A(14) <= ADC_ConvStart;
+	IO_A(15) <= ADC_RD;
+	ADC_Busy <= IO_A(16);
+	ADC_Data(7 downto 0) <= IO_A(24 downto 17);
+	BikeButtons(6 downto 1) <= IO_A(31 downto 26);
+	
 --	FSMControl: Control
 --		port map (clk => CLOCK_10, areset => areset, startstop => startstop, mins => mins, secs => secs, timezero => timezero, ready => LEDG(0), mins_up => mins_up, secs_up => secs_up, countdown => countdown, clear => clear);
 
 	ClockScaler: prescaler
-		port map (clkin => CLOCK_50, areset => areset, clkout => CLOCK_10);
+		port map (clkin => CLOCK_50, reset => reset, clkout => CLOCK_10);
 
+	TotalTimer: Timer
+		port map (clk => CLOCK_10, enable => enable, reset => reset, refresh => refresh, data => timerdata);
+
+	HallSensCount: HallCounter
+		port map (Clk_10k => CLOCK_10, reset => reset, Hallsensor => Hallsensor, refresh => refresh, enable => enable, data => countdata);
+
+	
 --	CounterTop: Counter
 --		port map (clk => CLOCK_10, clear => clear, countdown => countdown, mins_up => mins_up, secs_up => secs_up, timezero => timezero, digit0 => digit0_2_data0, digit1 => digit1_2_data1, digit2 => digit2_2_data2, digit3 => digit3_2_data3);
 		
@@ -112,7 +155,7 @@ begin
 --		port map (data0 => digit0_2_data0, data1 => digit1_2_data1, data2 => digit2_2_data2, data3 => digit3_2_data3, leds0 => HEX0_D, leds1 => HEX1_D, leds2 => HEX2_D, leds3 => HEX3_D);
 	
 	reset <= SW(0);
-	
+		
 	HEX0_DP <= '1';
 	HEX1_DP <= '1';
 	HEX2_DP <= '1';
