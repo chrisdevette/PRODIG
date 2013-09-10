@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for PRODIGgroep4
-Tue Sep 10 17:03:22 2013
+Tue Sep 10 17:56:22 2013
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,19 +16,36 @@ Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Editio
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Slow Model Datasheet Report
- 12. Fast Model Setup Summary
- 13. Fast Model Hold Summary
- 14. Fast Model Recovery Summary
- 15. Fast Model Removal Summary
- 16. Fast Model Minimum Pulse Width Summary
- 17. Fast Model Datasheet Report
- 18. Multicorner Timing Analysis Summary
- 19. Clock Transfers
- 20. Report TCCS
- 21. Report RSKM
- 22. Unconstrained Paths
- 23. TimeQuest Timing Analyzer Messages
+ 11. Slow Model Setup: 'Clk_10k'
+ 12. Slow Model Hold: 'Clk_10k'
+ 13. Slow Model Minimum Pulse Width: 'Clk_10k'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'Clk_10k'
+ 24. Fast Model Hold: 'Clk_10k'
+ 25. Fast Model Minimum Pulse Width: 'Clk_10k'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
 
 
 
@@ -75,28 +92,41 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                              ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets     ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
+; Clk_10k    ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { Clk_10k } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------+
 
 
----------------------------
-; Slow Model Fmax Summary ;
----------------------------
-No paths to report.
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 378.93 MHz ; 378.93 MHz      ; Clk_10k    ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-----------------------------
-; Slow Model Setup Summary ;
-----------------------------
-No paths to report.
++----------------------------------+
+; Slow Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; Clk_10k ; -1.639 ; -60.757       ;
++---------+--------+---------------+
 
 
----------------------------
-; Slow Model Hold Summary ;
----------------------------
-No paths to report.
++---------------------------------+
+; Slow Model Hold Summary         ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; Clk_10k ; 0.391 ; 0.000         ;
++---------+-------+---------------+
 
 
 -------------------------------
@@ -111,28 +141,427 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Slow Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; Clk_10k ; -1.380 ; -58.380             ;
++---------+--------+---------------------+
 
 
--------------------------------
-; Slow Model Datasheet Report ;
--------------------------------
-Nothing to report.
++----------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'Clk_10k'                                                                                    ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; -1.639 ; TotalCount[0]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.675      ;
+; -1.568 ; TotalCount[0]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.604      ;
+; -1.497 ; TotalCount[0]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.533      ;
+; -1.490 ; TempCount[0]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.526      ;
+; -1.429 ; TempCount[1]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.465      ;
+; -1.426 ; TotalCount[0]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.462      ;
+; -1.419 ; TempCount[0]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.455      ;
+; -1.419 ; TotalCount[1]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.455      ;
+; -1.414 ; TotalCount[4]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.450      ;
+; -1.359 ; TempCount[2]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.395      ;
+; -1.358 ; TotalCount[2]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.394      ;
+; -1.358 ; TempCount[1]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.394      ;
+; -1.355 ; TotalCount[0]  ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.391      ;
+; -1.348 ; TempCount[0]   ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.384      ;
+; -1.348 ; TotalCount[1]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.384      ;
+; -1.343 ; TotalCount[4]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.379      ;
+; -1.323 ; TempCount[3]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.359      ;
+; -1.312 ; UseTemp        ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.348      ;
+; -1.312 ; UseTemp        ; dataout[2]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.348      ;
+; -1.290 ; UseTemp        ; TempCount[0]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[4]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[6]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[7]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[8]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.290 ; UseTemp        ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.326      ;
+; -1.288 ; TotalCount[3]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.324      ;
+; -1.288 ; TempCount[2]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.324      ;
+; -1.287 ; TotalCount[2]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.323      ;
+; -1.287 ; TempCount[1]   ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.323      ;
+; -1.284 ; TotalCount[0]  ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.320      ;
+; -1.277 ; TempCount[0]   ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.313      ;
+; -1.277 ; TotalCount[1]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.313      ;
+; -1.272 ; TotalCount[4]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.308      ;
+; -1.270 ; TotalCount[6]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.306      ;
+; -1.252 ; TempCount[3]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.288      ;
+; -1.225 ; DelayCount[0]  ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.261      ;
+; -1.224 ; DelayCount[0]  ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.260      ;
+; -1.217 ; TotalCount[3]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.253      ;
+; -1.217 ; TempCount[4]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.253      ;
+; -1.217 ; TempCount[2]   ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.253      ;
+; -1.216 ; TotalCount[2]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.252      ;
+; -1.216 ; TempCount[1]   ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.252      ;
+; -1.213 ; TotalCount[0]  ; TotalCount[9]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.249      ;
+; -1.206 ; TempCount[0]   ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.242      ;
+; -1.206 ; TotalCount[1]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.242      ;
+; -1.201 ; TotalCount[4]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.237      ;
+; -1.201 ; state.DelayIn  ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.237      ;
+; -1.200 ; state.DelayIn  ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.236      ;
+; -1.199 ; TotalCount[6]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.235      ;
+; -1.182 ; TempCount[5]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.218      ;
+; -1.181 ; TempCount[3]   ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.217      ;
+; -1.174 ; state.WaitLow  ; state.WaitHigh ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.210      ;
+; -1.174 ; state.WaitLow  ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.210      ;
+; -1.146 ; TotalCount[5]  ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.182      ;
+; -1.146 ; TotalCount[3]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.182      ;
+; -1.146 ; TempCount[4]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.182      ;
+; -1.146 ; TempCount[2]   ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.182      ;
+; -1.145 ; TotalCount[2]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.181      ;
+; -1.145 ; TempCount[1]   ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.181      ;
+; -1.135 ; TempCount[0]   ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.171      ;
+; -1.135 ; TotalCount[1]  ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.171      ;
+; -1.130 ; TotalCount[4]  ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.166      ;
+; -1.128 ; TotalCount[6]  ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.164      ;
+; -1.114 ; DelayCount[1]  ; state.Measure  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.150      ;
+; -1.114 ; state.WaitHigh ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.150      ;
+; -1.113 ; state.WaitHigh ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.149      ;
+; -1.111 ; TempCount[6]   ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.147      ;
+; -1.111 ; TempCount[5]   ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.147      ;
+; -1.110 ; TempCount[3]   ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.146      ;
+; -1.096 ; state.WaitHigh ; state.Measure  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.132      ;
+; -1.093 ; state.WaitHigh ; state.DelayIn  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.129      ;
+; -1.093 ; DelayCount[0]  ; state.WaitHigh ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.129      ;
+; -1.093 ; DelayCount[0]  ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.129      ;
+; -1.075 ; TotalCount[5]  ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.111      ;
+; -1.075 ; TotalCount[3]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.111      ;
+; -1.075 ; TempCount[4]   ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.111      ;
+; -1.075 ; TempCount[2]   ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.111      ;
+; -1.074 ; TotalCount[2]  ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.110      ;
+; -1.074 ; TempCount[1]   ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.110      ;
+; -1.073 ; state.DelayIn  ; state.Measure  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.109      ;
+; -1.068 ; state.DelayIn  ; state.WaitHigh ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.104      ;
+; -1.068 ; state.DelayIn  ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.104      ;
+; -1.064 ; TempCount[0]   ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.100      ;
+; -1.064 ; TotalCount[1]  ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.100      ;
+; -1.059 ; TotalCount[4]  ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.095      ;
+; -1.058 ; DelayCount[1]  ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.094      ;
+; -1.057 ; TotalCount[6]  ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.093      ;
+; -1.057 ; DelayCount[1]  ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.093      ;
+; -1.054 ; TotalCount[0]  ; TotalCount[8]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.090      ;
+; -1.044 ; DelayCount[0]  ; state.Measure  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 2.080      ;
++--------+----------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-----------------------------
-; Fast Model Setup Summary ;
-----------------------------
-No paths to report.
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'Clk_10k'                                                                                    ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; state.Rest     ; state.Rest     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state.WaitLow  ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state.DelayIn  ; state.DelayIn  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DelayCount[0]  ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; DelayCount[1]  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state.WaitHigh ; state.WaitHigh ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state.DelayOut ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; state.Measure  ; state.Measure  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; TotalCount[0]  ; TotalCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.657      ;
+; 0.527 ; TotalCount[15] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.793      ;
+; 0.531 ; TempCount[15]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.797      ;
+; 0.554 ; DelayCount[0]  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.820      ;
+; 0.680 ; state.Rest     ; UseTemp        ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.946      ;
+; 0.737 ; TotalCount[15] ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.003      ;
+; 0.738 ; TotalCount[13] ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.004      ;
+; 0.739 ; TotalCount[10] ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.005      ;
+; 0.739 ; TotalCount[11] ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.005      ;
+; 0.751 ; state.DelayOut ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.017      ;
+; 0.795 ; TempCount[0]   ; TempCount[0]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.061      ;
+; 0.795 ; TotalCount[1]  ; TotalCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.061      ;
+; 0.802 ; TotalCount[14] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; TempCount[1]   ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; TotalCount[2]  ; TotalCount[2]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.071      ;
+; 0.805 ; state.WaitHigh ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; TempCount[2]   ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TotalCount[3]  ; TotalCount[3]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[4]   ; TempCount[4]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TotalCount[5]  ; TotalCount[5]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[7]   ; TempCount[7]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TotalCount[8]  ; TotalCount[8]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[9]   ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TotalCount[10] ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[11]  ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TotalCount[12] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[13]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; TempCount[14]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.072      ;
+; 0.823 ; state.Rest     ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.089      ;
+; 0.828 ; TotalCount[7]  ; TotalCount[7]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.094      ;
+; 0.829 ; state.WaitLow  ; state.DelayIn  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.095      ;
+; 0.838 ; TempCount[3]   ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TempCount[8]   ; TempCount[8]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TotalCount[9]  ; TotalCount[9]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TempCount[10]  ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TotalCount[11] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TempCount[12]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TotalCount[13] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; TotalCount[8]  ; dataout[8]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; TempCount[5]   ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; TempCount[6]   ; TempCount[6]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.105      ;
+; 0.841 ; state.DelayIn  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.107      ;
+; 0.857 ; UseTemp        ; dataout[6]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.123      ;
+; 0.862 ; UseTemp        ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.128      ;
+; 0.865 ; UseTemp        ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.131      ;
+; 0.865 ; TotalCount[5]  ; dataout[5]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.131      ;
+; 0.865 ; UseTemp        ; dataout[5]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.131      ;
+; 0.866 ; TotalCount[14] ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.132      ;
+; 0.870 ; TotalCount[7]  ; dataout[7]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.136      ;
+; 0.870 ; TotalCount[9]  ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.136      ;
+; 0.874 ; UseTemp        ; dataout[0]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.140      ;
+; 0.876 ; UseTemp        ; dataout[8]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.142      ;
+; 0.877 ; UseTemp        ; dataout[7]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.143      ;
+; 0.927 ; TempCount[14]  ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.193      ;
+; 0.945 ; TempCount[9]   ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.211      ;
+; 0.978 ; TotalCount[0]  ; dataout[0]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.244      ;
+; 0.992 ; UseTemp        ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.258      ;
+; 1.001 ; TotalCount[6]  ; TotalCount[6]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.267      ;
+; 1.003 ; TotalCount[4]  ; TotalCount[4]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.269      ;
+; 1.008 ; TotalCount[6]  ; dataout[6]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.274      ;
+; 1.011 ; TotalCount[0]  ; TotalCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.277      ;
+; 1.018 ; state.DelayIn  ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.284      ;
+; 1.041 ; TotalCount[4]  ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.307      ;
+; 1.042 ; TotalCount[3]  ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.308      ;
+; 1.046 ; TotalCount[12] ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.312      ;
+; 1.061 ; state.DelayOut ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.327      ;
+; 1.062 ; TempCount[10]  ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.328      ;
+; 1.064 ; TempCount[11]  ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.330      ;
+; 1.065 ; UseTemp        ; dataout[2]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.331      ;
+; 1.068 ; TempCount[15]  ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.334      ;
+; 1.069 ; TempCount[12]  ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.335      ;
+; 1.071 ; TempCount[4]   ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.337      ;
+; 1.096 ; TempCount[13]  ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.362      ;
+; 1.100 ; TempCount[3]   ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.366      ;
+; 1.109 ; TotalCount[1]  ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.375      ;
+; 1.125 ; UseTemp        ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.391      ;
+; 1.129 ; UseTemp        ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.395      ;
+; 1.144 ; UseTemp        ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.410      ;
+; 1.145 ; UseTemp        ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.411      ;
+; 1.145 ; UseTemp        ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.411      ;
+; 1.147 ; UseTemp        ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.413      ;
+; 1.149 ; UseTemp        ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.415      ;
+; 1.178 ; TempCount[0]   ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.444      ;
+; 1.178 ; TotalCount[1]  ; TotalCount[2]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.444      ;
+; 1.185 ; TotalCount[14] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.451      ;
+; 1.188 ; TempCount[1]   ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; TotalCount[2]  ; TotalCount[3]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.454      ;
+; 1.189 ; TempCount[14]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; TempCount[13]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; TempCount[2]   ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; TempCount[9]   ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; TotalCount[10] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 1.455      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
----------------------------
-; Fast Model Hold Summary ;
----------------------------
-No paths to report.
++---------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'Clk_10k'                                                         ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clk_10k ; Rise       ; Clk_10k        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; DelayCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; DelayCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; DelayCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; DelayCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; UseTemp        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; UseTemp        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[8]     ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; 4.577 ; 4.577 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; 3.861 ; 3.861 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; 4.918 ; 4.918 ; Rise       ; Clk_10k         ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; -3.273 ; -3.273 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; -3.183 ; -3.183 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; -3.383 ; -3.383 ; Rise       ; Clk_10k         ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 6.811 ; 6.811 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 6.524 ; 6.524 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 6.539 ; 6.539 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 6.519 ; 6.519 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 6.303 ; 6.303 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 6.530 ; 6.530 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 6.510 ; 6.510 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 6.811 ; 6.811 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 6.542 ; 6.542 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 6.553 ; 6.553 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 6.781 ; 6.781 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 6.332 ; 6.332 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 6.778 ; 6.778 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 6.568 ; 6.568 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 6.790 ; 6.790 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 6.805 ; 6.805 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 6.775 ; 6.775 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 6.303 ; 6.303 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 6.524 ; 6.524 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 6.539 ; 6.539 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 6.519 ; 6.519 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 6.303 ; 6.303 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 6.530 ; 6.530 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 6.510 ; 6.510 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 6.811 ; 6.811 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 6.542 ; 6.542 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 6.553 ; 6.553 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 6.781 ; 6.781 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 6.332 ; 6.332 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 6.778 ; 6.778 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 6.568 ; 6.568 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 6.790 ; 6.790 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 6.805 ; 6.805 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 6.775 ; 6.775 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------+
+; Fast Model Setup Summary         ;
++---------+--------+---------------+
+; Clock   ; Slack  ; End Point TNS ;
++---------+--------+---------------+
+; Clk_10k ; -0.239 ; -3.137        ;
++---------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++---------+-------+---------------+
+; Clock   ; Slack ; End Point TNS ;
++---------+-------+---------------+
+; Clk_10k ; 0.215 ; 0.000         ;
++---------+-------+---------------+
 
 
 -------------------------------
@@ -147,32 +576,513 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Fast Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++---------+--------+---------------------+
+; Clock   ; Slack  ; End Point TNS       ;
++---------+--------+---------------------+
+; Clk_10k ; -1.380 ; -58.380             ;
++---------+--------+---------------------+
 
 
--------------------------------
-; Fast Model Datasheet Report ;
--------------------------------
-Nothing to report.
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'Clk_10k'                                                                                   ;
++--------+---------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node     ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------+----------------+--------------+-------------+--------------+------------+------------+
+; -0.239 ; TotalCount[0] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.271      ;
+; -0.204 ; TotalCount[0] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.236      ;
+; -0.169 ; TotalCount[0] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.201      ;
+; -0.164 ; UseTemp       ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.195      ;
+; -0.164 ; UseTemp       ; dataout[2]     ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.195      ;
+; -0.162 ; TempCount[0]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.194      ;
+; -0.134 ; TotalCount[0] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.166      ;
+; -0.131 ; TempCount[1]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.163      ;
+; -0.127 ; TempCount[0]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.159      ;
+; -0.127 ; TotalCount[1] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.159      ;
+; -0.122 ; TotalCount[4] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.154      ;
+; -0.113 ; UseTemp       ; TempCount[0]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[4]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[6]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[7]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[8]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.113 ; UseTemp       ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.144      ;
+; -0.099 ; TotalCount[0] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.131      ;
+; -0.097 ; TempCount[2]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.129      ;
+; -0.096 ; TotalCount[2] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.128      ;
+; -0.096 ; TempCount[1]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.128      ;
+; -0.092 ; TempCount[0]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.124      ;
+; -0.092 ; TotalCount[1] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.124      ;
+; -0.087 ; TotalCount[4] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.119      ;
+; -0.075 ; TempCount[3]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.107      ;
+; -0.064 ; TotalCount[0] ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.096      ;
+; -0.062 ; TotalCount[3] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.094      ;
+; -0.062 ; TempCount[2]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.094      ;
+; -0.061 ; TotalCount[2] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.093      ;
+; -0.061 ; TempCount[1]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.093      ;
+; -0.057 ; TempCount[0]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.089      ;
+; -0.057 ; TotalCount[1] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.089      ;
+; -0.052 ; TotalCount[6] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.084      ;
+; -0.052 ; TotalCount[4] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.084      ;
+; -0.040 ; TempCount[3]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.072      ;
+; -0.029 ; TotalCount[0] ; TotalCount[9]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.061      ;
+; -0.028 ; TempCount[4]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.060      ;
+; -0.027 ; TotalCount[3] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.059      ;
+; -0.027 ; TempCount[2]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.059      ;
+; -0.026 ; TotalCount[2] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.058      ;
+; -0.026 ; TempCount[1]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.058      ;
+; -0.022 ; TempCount[0]  ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.054      ;
+; -0.022 ; TotalCount[1] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.054      ;
+; -0.017 ; TotalCount[6] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.049      ;
+; -0.017 ; TotalCount[4] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.049      ;
+; -0.006 ; TempCount[5]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.038      ;
+; -0.005 ; TempCount[3]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.037      ;
+; 0.003  ; state.Measure ; TempCount[0]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[4]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[6]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[7]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[8]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.003  ; state.Measure ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 1.000        ; -0.001     ; 1.028      ;
+; 0.007  ; DelayCount[0] ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.025      ;
+; 0.007  ; TotalCount[5] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.025      ;
+; 0.007  ; TempCount[4]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.025      ;
+; 0.008  ; DelayCount[0] ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.024      ;
+; 0.008  ; TotalCount[3] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.024      ;
+; 0.008  ; TempCount[2]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.024      ;
+; 0.009  ; TotalCount[2] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.023      ;
+; 0.009  ; TempCount[1]  ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.023      ;
+; 0.013  ; TempCount[0]  ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.019      ;
+; 0.013  ; TotalCount[1] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.019      ;
+; 0.015  ; state.DelayIn ; state.Rest     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.017      ;
+; 0.016  ; state.DelayIn ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.016      ;
+; 0.018  ; UseTemp       ; dataout[0]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[5]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[6]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[7]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[8]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; UseTemp       ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
+; 0.018  ; TotalCount[6] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 1.000        ; 0.000      ; 1.014      ;
++--------+---------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'Clk_10k'                                                                                    ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node      ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; state.Rest     ; state.Rest     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state.WaitLow  ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state.DelayIn  ; state.DelayIn  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DelayCount[0]  ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; DelayCount[1]  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state.WaitHigh ; state.WaitHigh ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state.DelayOut ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; state.Measure  ; state.Measure  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; TotalCount[0]  ; TotalCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; TotalCount[15] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.393      ;
+; 0.243 ; TempCount[15]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.395      ;
+; 0.258 ; DelayCount[0]  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.410      ;
+; 0.336 ; state.Rest     ; UseTemp        ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.488      ;
+; 0.339 ; TotalCount[11] ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.491      ;
+; 0.339 ; TotalCount[15] ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.491      ;
+; 0.340 ; TotalCount[13] ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.492      ;
+; 0.342 ; TotalCount[10] ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.494      ;
+; 0.347 ; state.DelayOut ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.500      ;
+; 0.355 ; TempCount[0]   ; TempCount[0]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.507      ;
+; 0.358 ; TotalCount[1]  ; TotalCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; TotalCount[14] ; TotalCount[14] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; TempCount[1]   ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; TotalCount[2]  ; TotalCount[2]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; TempCount[2]   ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; TotalCount[3]  ; TotalCount[3]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; TempCount[9]   ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; TotalCount[10] ; TotalCount[10] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; TempCount[11]  ; TempCount[11]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; TotalCount[12] ; TotalCount[12] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; TempCount[4]   ; TempCount[4]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; TotalCount[5]  ; TotalCount[5]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; TempCount[7]   ; TempCount[7]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; TotalCount[8]  ; TotalCount[8]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; TempCount[13]  ; TempCount[13]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; TempCount[14]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; state.WaitHigh ; state.DelayOut ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.513      ;
+; 0.367 ; TotalCount[7]  ; TotalCount[7]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.519      ;
+; 0.371 ; TempCount[3]   ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; TempCount[8]   ; TempCount[8]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; TotalCount[9]  ; TotalCount[9]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; TempCount[10]  ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; TotalCount[11] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; TempCount[5]   ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; TempCount[6]   ; TempCount[6]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; TempCount[12]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; TotalCount[13] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.524      ;
+; 0.378 ; state.WaitLow  ; state.DelayIn  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.530      ;
+; 0.383 ; TotalCount[8]  ; dataout[8]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.535      ;
+; 0.383 ; state.Rest     ; state.WaitLow  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.535      ;
+; 0.387 ; TotalCount[5]  ; dataout[5]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.539      ;
+; 0.387 ; state.DelayIn  ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.539      ;
+; 0.389 ; TotalCount[7]  ; dataout[7]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.541      ;
+; 0.389 ; TotalCount[14] ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.541      ;
+; 0.393 ; TotalCount[9]  ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.545      ;
+; 0.405 ; UseTemp        ; dataout[6]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.557      ;
+; 0.409 ; UseTemp        ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.561      ;
+; 0.412 ; UseTemp        ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.564      ;
+; 0.412 ; UseTemp        ; dataout[5]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.564      ;
+; 0.416 ; TempCount[14]  ; dataout[14]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.569      ;
+; 0.420 ; UseTemp        ; dataout[0]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.572      ;
+; 0.421 ; UseTemp        ; dataout[8]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.573      ;
+; 0.422 ; UseTemp        ; dataout[7]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.574      ;
+; 0.429 ; TempCount[9]   ; dataout[9]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.582      ;
+; 0.445 ; UseTemp        ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 0.000        ; -0.001     ; 0.596      ;
+; 0.452 ; state.DelayIn  ; DelayCount[0]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.604      ;
+; 0.455 ; TotalCount[4]  ; TotalCount[4]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.607      ;
+; 0.455 ; TotalCount[6]  ; TotalCount[6]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.607      ;
+; 0.455 ; TotalCount[0]  ; dataout[0]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.607      ;
+; 0.461 ; TotalCount[6]  ; dataout[6]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.613      ;
+; 0.465 ; TotalCount[0]  ; TotalCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.617      ;
+; 0.466 ; TotalCount[3]  ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.618      ;
+; 0.469 ; TotalCount[4]  ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.621      ;
+; 0.471 ; UseTemp        ; dataout[2]     ; Clk_10k      ; Clk_10k     ; 0.000        ; -0.001     ; 0.622      ;
+; 0.473 ; TempCount[11]  ; dataout[11]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.626      ;
+; 0.473 ; TempCount[10]  ; dataout[10]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.626      ;
+; 0.474 ; TempCount[4]   ; dataout[4]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.627      ;
+; 0.477 ; TempCount[12]  ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.630      ;
+; 0.478 ; state.DelayOut ; DelayCount[1]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.631      ;
+; 0.488 ; TempCount[15]  ; dataout[15]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.641      ;
+; 0.488 ; TotalCount[12] ; dataout[12]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.640      ;
+; 0.493 ; TempCount[13]  ; dataout[13]    ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.646      ;
+; 0.493 ; TempCount[0]   ; TempCount[1]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.645      ;
+; 0.493 ; TotalCount[1]  ; TotalCount[2]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.645      ;
+; 0.494 ; TempCount[3]   ; dataout[3]     ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.001      ; 0.647      ;
+; 0.496 ; TotalCount[14] ; TotalCount[15] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; TempCount[1]   ; TempCount[2]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; TotalCount[2]  ; TotalCount[3]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; TempCount[2]   ; TempCount[3]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; TempCount[9]   ; TempCount[10]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; TotalCount[10] ; TotalCount[11] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; TempCount[11]  ; TempCount[12]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; TotalCount[12] ; TotalCount[13] ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; TotalCount[3]  ; TotalCount[4]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; TempCount[14]  ; TempCount[15]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; TempCount[13]  ; TempCount[14]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; TempCount[4]   ; TempCount[5]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; TotalCount[5]  ; TotalCount[6]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.651      ;
+; 0.502 ; TotalCount[1]  ; dataout[1]     ; Clk_10k      ; Clk_10k     ; 0.000        ; -0.001     ; 0.653      ;
+; 0.507 ; TotalCount[7]  ; TotalCount[8]  ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.659      ;
+; 0.511 ; TempCount[8]   ; TempCount[9]   ; Clk_10k      ; Clk_10k     ; 0.000        ; 0.000      ; 0.663      ;
++-------+----------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++---------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'Clk_10k'                                                         ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock   ; Clock Edge ; Target         ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; Clk_10k ; Rise       ; Clk_10k        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; DelayCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; DelayCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; DelayCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; DelayCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[14]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[15]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TempCount[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TempCount[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; TotalCount[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; TotalCount[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; UseTemp        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; UseTemp        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[10]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[11]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[12]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[13]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[14]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[15]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; Clk_10k ; Rise       ; dataout[7]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; Clk_10k ; Rise       ; dataout[8]     ;
++--------+--------------+----------------+------------------+---------+------------+----------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; 2.157 ; 2.157 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; 1.863 ; 1.863 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; 2.417 ; 2.417 ; Rise       ; Clk_10k         ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; -1.578 ; -1.578 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; -1.554 ; -1.554 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; -1.648 ; -1.648 ; Rise       ; Clk_10k         ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 3.997 ; 3.997 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 3.845 ; 3.845 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 3.861 ; 3.861 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 3.841 ; 3.841 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 3.746 ; 3.746 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 3.853 ; 3.853 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 3.832 ; 3.832 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 3.997 ; 3.997 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 3.864 ; 3.864 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 3.875 ; 3.875 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 3.966 ; 3.966 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 3.775 ; 3.775 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 3.967 ; 3.967 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 3.884 ; 3.884 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 3.980 ; 3.980 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 3.991 ; 3.991 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 3.961 ; 3.961 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 3.746 ; 3.746 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 3.845 ; 3.845 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 3.861 ; 3.861 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 3.841 ; 3.841 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 3.746 ; 3.746 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 3.853 ; 3.853 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 3.832 ; 3.832 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 3.997 ; 3.997 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 3.864 ; 3.864 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 3.875 ; 3.875 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 3.966 ; 3.966 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 3.775 ; 3.775 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 3.967 ; 3.967 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 3.884 ; 3.884 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 3.980 ; 3.980 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 3.991 ; 3.991 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 3.961 ; 3.961 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.639  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  Clk_10k         ; -1.639  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -60.757 ; 0.0   ; 0.0      ; 0.0     ; -58.38              ;
+;  Clk_10k         ; -60.757 ; 0.000 ; N/A      ; N/A     ; -58.380             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Setup Times                                                            ;
++------------+------------+-------+-------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------+------------+-------+-------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; 4.577 ; 4.577 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; 3.861 ; 3.861 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; 4.918 ; 4.918 ; Rise       ; Clk_10k         ;
++------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++------------+------------+--------+--------+------------+-----------------+
+; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------+------------+--------+--------+------------+-----------------+
+; Hallsensor ; Clk_10k    ; -1.578 ; -1.578 ; Rise       ; Clk_10k         ;
+; enable     ; Clk_10k    ; -1.554 ; -1.554 ; Rise       ; Clk_10k         ;
+; output     ; Clk_10k    ; -1.648 ; -1.648 ; Rise       ; Clk_10k         ;
++------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 6.811 ; 6.811 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 6.524 ; 6.524 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 6.539 ; 6.539 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 6.519 ; 6.519 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 6.303 ; 6.303 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 6.530 ; 6.530 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 6.510 ; 6.510 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 6.811 ; 6.811 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 6.542 ; 6.542 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 6.553 ; 6.553 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 6.781 ; 6.781 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 6.332 ; 6.332 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 6.778 ; 6.778 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 6.568 ; 6.568 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 6.790 ; 6.790 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 6.805 ; 6.805 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 6.775 ; 6.775 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; data[*]   ; Clk_10k    ; 3.746 ; 3.746 ; Rise       ; Clk_10k         ;
+;  data[0]  ; Clk_10k    ; 3.845 ; 3.845 ; Rise       ; Clk_10k         ;
+;  data[1]  ; Clk_10k    ; 3.861 ; 3.861 ; Rise       ; Clk_10k         ;
+;  data[2]  ; Clk_10k    ; 3.841 ; 3.841 ; Rise       ; Clk_10k         ;
+;  data[3]  ; Clk_10k    ; 3.746 ; 3.746 ; Rise       ; Clk_10k         ;
+;  data[4]  ; Clk_10k    ; 3.853 ; 3.853 ; Rise       ; Clk_10k         ;
+;  data[5]  ; Clk_10k    ; 3.832 ; 3.832 ; Rise       ; Clk_10k         ;
+;  data[6]  ; Clk_10k    ; 3.997 ; 3.997 ; Rise       ; Clk_10k         ;
+;  data[7]  ; Clk_10k    ; 3.864 ; 3.864 ; Rise       ; Clk_10k         ;
+;  data[8]  ; Clk_10k    ; 3.875 ; 3.875 ; Rise       ; Clk_10k         ;
+;  data[9]  ; Clk_10k    ; 3.966 ; 3.966 ; Rise       ; Clk_10k         ;
+;  data[10] ; Clk_10k    ; 3.775 ; 3.775 ; Rise       ; Clk_10k         ;
+;  data[11] ; Clk_10k    ; 3.967 ; 3.967 ; Rise       ; Clk_10k         ;
+;  data[12] ; Clk_10k    ; 3.884 ; 3.884 ; Rise       ; Clk_10k         ;
+;  data[13] ; Clk_10k    ; 3.980 ; 3.980 ; Rise       ; Clk_10k         ;
+;  data[14] ; Clk_10k    ; 3.991 ; 3.991 ; Rise       ; Clk_10k         ;
+;  data[15] ; Clk_10k    ; 3.961 ; 3.961 ; Rise       ; Clk_10k         ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk_10k    ; Clk_10k  ; 482      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; Clk_10k    ; Clk_10k  ; 482      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -194,10 +1104,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 0     ; 0    ;
-; Unconstrained Output Port Paths ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 4     ; 4    ;
+; Unconstrained Input Port Paths  ; 101   ; 101  ;
+; Unconstrained Output Ports      ; 16    ; 16   ;
+; Unconstrained Output Port Paths ; 16    ; 16   ;
 +---------------------------------+-------+------+
 
 
@@ -207,7 +1117,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Sep 10 17:03:21 2013
+    Info: Processing started: Tue Sep 10 17:56:21 2013
 Info: Command: quartus_sta PRODIGgroep4 -c PRODIGgroep4
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -215,33 +1125,48 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'PRODIGgroep4.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name Clk_10k Clk_10k
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.639
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.639       -60.757 Clk_10k 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 Clk_10k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -58.380 Clk_10k 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.239
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.239        -3.137 Clk_10k 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 Clk_10k 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -58.380 Clk_10k 
 Info (332001): The selected device family is not supported by the report_metastability command.
-Info (332101): Design is fully constrained for setup requirements
-Info (332101): Design is fully constrained for hold requirements
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 387 megabytes
-    Info: Processing ended: Tue Sep 10 17:03:22 2013
+    Info: Peak virtual memory: 393 megabytes
+    Info: Processing ended: Tue Sep 10 17:56:22 2013
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

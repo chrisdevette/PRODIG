@@ -40,6 +40,13 @@ begin
 			if enable = '0' then
 				state <= Rest;
 			end if;
+
+			if Usetemp = '0' then
+				dataout <= TotalCount;
+			elsif output = '1' and UseTemp = '1' then
+				dataout <= TempCount;
+				TempCount <= "0000000000000000";
+			end if;
 			
 			case state is
 				when Rest =>
@@ -94,15 +101,5 @@ begin
 	end process;
 	
 	data <=	dataout;
-	
-	refresh: process(Clk_10k)
-	begin
-		if output = '1' and UseTemp = '1' then
-			dataout <= TempCount;
-			TempCount <= "0000000000000000";
-		elsif Usetemp = '0' then
-			dataout <= TotalCount;
-		end if;
-	end process;
 	
 end architecture;
