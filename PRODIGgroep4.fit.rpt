@@ -1,5 +1,5 @@
 Fitter report for PRODIGgroep4
-Tue Sep 10 17:56:17 2013
+Tue Sep 10 19:27:26 2013
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Tue Sep 10 17:56:17 2013         ;
+; Fitter Status                      ; Successful - Tue Sep 10 19:27:26 2013         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PRODIGgroep4                                  ;
 ; Top-level Entity Name              ; HallCounter                                   ;
@@ -194,8 +194,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ;     -- Combinational with a register        ; 57                    ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 31                    ;
-;     -- 3 input functions                    ; 7                     ;
+;     -- 4 input functions                    ; 15                    ;
+;     -- 3 input functions                    ; 23                    ;
 ;     -- <=2 input functions                  ; 33                    ;
 ;     -- Register only                        ; 0                     ;
 ;                                             ;                       ;
@@ -207,7 +207,7 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ;     -- Dedicated logic registers            ; 57 / 14,448 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )       ;
 ;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 5 / 903 ( < 1 % )     ;
+; Total LABs:  partially or completely used   ; 6 / 903 ( < 1 % )     ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 21 / 315 ( 7 % )      ;
 ;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
@@ -226,8 +226,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
 ; Maximum fan-out                             ; 57                    ;
 ; Highest non-global fan-out                  ; 37                    ;
-; Total fan-out                               ; 461                   ;
-; Average fan-out                             ; 2.99                  ;
+; Total fan-out                               ; 445                   ;
+; Average fan-out                             ; 2.89                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -246,8 +246,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ;     -- Combinational with a register        ; 57                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 31                   ; 0                              ;
-;     -- 3 input functions                    ; 7                    ; 0                              ;
+;     -- 4 input functions                    ; 15                   ; 0                              ;
+;     -- 3 input functions                    ; 23                   ; 0                              ;
 ;     -- <=2 input functions                  ; 33                   ; 0                              ;
 ;     -- Register only                        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
@@ -258,7 +258,7 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; Total registers                             ; 57                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 57 / 14448 ( < 1 % ) ; 0 / 14448 ( 0 % )              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 5 / 903 ( < 1 % )    ; 0 / 903 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 6 / 903 ( < 1 % )    ; 0 / 903 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 21                   ; 0                              ;
@@ -274,7 +274,7 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 461                  ; 0                              ;
+;     -- Total Connections                    ; 445                  ; 0                              ;
 ;     -- Registered Connections               ; 179                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -308,9 +308,9 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Clk_10k    ; M1    ; 1        ; 0            ; 13           ; 2           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; Hallsensor ; E11   ; 3        ; 22           ; 27           ; 2           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; enable     ; D11   ; 3        ; 22           ; 27           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; output     ; B13   ; 4        ; 26           ; 27           ; 0           ; 18                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; Hallsensor ; C10   ; 3        ; 18           ; 27           ; 2           ; 9                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; enable     ; H10   ; 3        ; 15           ; 27           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; output     ; H11   ; 3        ; 20           ; 27           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; reset      ; M2    ; 1        ; 0            ; 13           ; 3           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -320,22 +320,22 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 +----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; data[0]  ; F10   ; 3        ; 18           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[10] ; A11   ; 3        ; 22           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[11] ; H12   ; 4        ; 31           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[12] ; A13   ; 4        ; 26           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[13] ; C13   ; 4        ; 31           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[14] ; A14   ; 4        ; 29           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[15] ; G12   ; 4        ; 31           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[1]  ; C10   ; 3        ; 18           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[2]  ; F11   ; 3        ; 18           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[3]  ; B11   ; 3        ; 22           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[4]  ; H11   ; 3        ; 20           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[5]  ; B10   ; 3        ; 20           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[6]  ; A9    ; 3        ; 15           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[7]  ; G11   ; 3        ; 20           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[8]  ; A10   ; 3        ; 20           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; data[9]  ; B14   ; 4        ; 29           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[0]  ; D11   ; 3        ; 22           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[10] ; B8    ; 3        ; 13           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[11] ; G11   ; 3        ; 20           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[12] ; F10   ; 3        ; 18           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[13] ; B10   ; 3        ; 20           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[14] ; E11   ; 3        ; 22           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[15] ; H9    ; 3        ; 15           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[1]  ; B11   ; 3        ; 22           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[2]  ; A10   ; 3        ; 20           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[3]  ; A9    ; 3        ; 15           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[4]  ; F11   ; 3        ; 18           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[5]  ; B9    ; 3        ; 15           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[6]  ; A11   ; 3        ; 22           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[7]  ; A13   ; 4        ; 26           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[8]  ; E9    ; 3        ; 13           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; data[9]  ; B13   ; 4        ; 26           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +----------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -346,8 +346,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 +----------+------------------+---------------+--------------+
 ; 1        ; 2 / 41 ( 5 % )   ; 3.3V          ; --           ;
 ; 2        ; 2 / 33 ( 6 % )   ; 3.3V          ; --           ;
-; 3        ; 12 / 43 ( 28 % ) ; 3.3V          ; --           ;
-; 4        ; 7 / 40 ( 18 % )  ; 3.3V          ; --           ;
+; 3        ; 17 / 43 ( 40 % ) ; 3.3V          ; --           ;
+; 4        ; 2 / 40 ( 5 % )   ; 3.3V          ; --           ;
 ; 5        ; 0 / 39 ( 0 % )   ; 3.3V          ; --           ;
 ; 6        ; 1 / 36 ( 3 % )   ; 3.3V          ; --           ;
 ; 7        ; 0 / 40 ( 0 % )   ; 3.3V          ; --           ;
@@ -368,12 +368,12 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; A6       ; 320        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A7       ; 306        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A8       ; 304        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A9       ; 298        ; 3        ; data[6]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A10      ; 293        ; 3        ; data[8]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A11      ; 287        ; 3        ; data[10]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A9       ; 298        ; 3        ; data[3]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A10      ; 293        ; 3        ; data[2]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A11      ; 287        ; 3        ; data[6]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; A12      ; 283        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A13      ; 281        ; 4        ; data[12]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; A14      ; 279        ; 4        ; data[14]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A13      ; 281        ; 4        ; data[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; A14      ; 279        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A15      ; 273        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A16      ; 271        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A17      ; 265        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -433,13 +433,13 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; B5       ; 321        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B6       ; 319        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B7       ; 305        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B8       ; 303        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B9       ; 297        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B10      ; 292        ; 3        ; data[5]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B11      ; 286        ; 3        ; data[3]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B8       ; 303        ; 3        ; data[10]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B9       ; 297        ; 3        ; data[5]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B10      ; 292        ; 3        ; data[13]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B11      ; 286        ; 3        ; data[1]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; B12      ; 282        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B13      ; 280        ; 4        ; output                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; B14      ; 278        ; 4        ; data[9]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B13      ; 280        ; 4        ; data[9]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; B14      ; 278        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B15      ; 272        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B16      ; 270        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B17      ; 264        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -457,10 +457,10 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; C7       ; 315        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C8       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C9       ; 310        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C10      ; 296        ; 3        ; data[1]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C10      ; 296        ; 3        ; Hallsensor                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; C11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; C12      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; C13      ; 275        ; 4        ; data[13]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; C13      ; 275        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C14      ; 260        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C16      ; 254        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -480,7 +480,7 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; D8       ; 309        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D9       ; 302        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; D10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; D11      ; 289        ; 3        ; enable                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; D11      ; 289        ; 3        ; data[0]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; D12      ; 284        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; D13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D14      ; 267        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -500,9 +500,9 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; E6       ;            ;          ; VCCA_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; E7       ; 316        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; E8       ; 308        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; E9       ; 301        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; E9       ; 301        ; 3        ; data[8]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E10      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; E11      ; 288        ; 3        ; Hallsensor                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; E11      ; 288        ; 3        ; data[14]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; E12      ; 285        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; E13      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; E14      ; 266        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -523,8 +523,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; F7       ;            ;          ; GNDA_PLL3                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F8       ; 312        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F9       ; 307        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; F10      ; 295        ; 3        ; data[0]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; F11      ; 294        ; 3        ; data[2]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F10      ; 295        ; 3        ; data[12]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; F11      ; 294        ; 3        ; data[4]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; F12      ; 276        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F13      ; 269        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; F14      ; 268        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -546,8 +546,8 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; G8       ; 313        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G9       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; G10      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; G11      ; 291        ; 3        ; data[7]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; G12      ; 277        ; 4        ; data[15]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G11      ; 291        ; 3        ; data[11]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; G12      ; 277        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; G13      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; G14      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; G15      ; 261        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -566,10 +566,10 @@ The pin-out file can be found in C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgro
 ; H6       ; 19         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H7       ; 318        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H8       ; 314        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H9       ; 300        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H10      ; 299        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; H11      ; 290        ; 3        ; data[4]                                  ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; H12      ; 274        ; 4        ; data[11]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H9       ; 300        ; 3        ; data[15]                                 ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H10      ; 299        ; 3        ; enable                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H11      ; 290        ; 3        ; output                                   ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; H12      ; 274        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H13      ; 263        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H14      ; 257        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H15      ; 253        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -916,9 +916,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; data[13]   ; Output   ; --            ; --            ; --                    ; --  ;
 ; data[14]   ; Output   ; --            ; --            ; --                    ; --  ;
 ; data[15]   ; Output   ; --            ; --            ; --                    ; --  ;
-; output     ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; Clk_10k    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; reset      ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; output     ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; enable     ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; Hallsensor ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 +------------+----------+---------------+---------------+-----------------------+-----+
@@ -929,56 +929,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------+-------------------+---------+
 ; Source Pin / Fanout     ; Pad To Core Index ; Setting ;
 +-------------------------+-------------------+---------+
-; output                  ;                   ;         ;
-;      - dataout~0        ; 0                 ; 6       ;
-;      - dataout~1        ; 0                 ; 6       ;
-;      - dataout~2        ; 0                 ; 6       ;
-;      - dataout~3        ; 0                 ; 6       ;
-;      - dataout~4        ; 0                 ; 6       ;
-;      - dataout~5        ; 0                 ; 6       ;
-;      - dataout~6        ; 0                 ; 6       ;
-;      - dataout~7        ; 0                 ; 6       ;
-;      - dataout~8        ; 0                 ; 6       ;
-;      - dataout~9        ; 0                 ; 6       ;
-;      - dataout~10       ; 0                 ; 6       ;
-;      - dataout~11       ; 0                 ; 6       ;
-;      - dataout~12       ; 0                 ; 6       ;
-;      - dataout~13       ; 0                 ; 6       ;
-;      - dataout~14       ; 0                 ; 6       ;
-;      - dataout~15       ; 0                 ; 6       ;
-;      - dataout~16       ; 0                 ; 6       ;
-;      - TempCount[15]~18 ; 0                 ; 6       ;
 ; Clk_10k                 ;                   ;         ;
 ; reset                   ;                   ;         ;
+; output                  ;                   ;         ;
+;      - dataout~1        ; 1                 ; 6       ;
+;      - TempCount~18     ; 1                 ; 6       ;
 ; enable                  ;                   ;         ;
-;      - Selector5~4      ; 1                 ; 6       ;
-;      - Selector2~0      ; 1                 ; 6       ;
-;      - Selector7~2      ; 1                 ; 6       ;
-;      - Selector3~3      ; 1                 ; 6       ;
+;      - Selector5~4      ; 0                 ; 6       ;
+;      - Selector2~0      ; 0                 ; 6       ;
+;      - Selector7~2      ; 0                 ; 6       ;
+;      - Selector3~3      ; 0                 ; 6       ;
 ; Hallsensor              ;                   ;         ;
-;      - Selector5~1      ; 1                 ; 6       ;
-;      - Selector5~2      ; 1                 ; 6       ;
-;      - Selector3~0      ; 1                 ; 6       ;
-;      - Selector4~0      ; 1                 ; 6       ;
-;      - Selector7~0      ; 1                 ; 6       ;
-;      - Selector7~1      ; 1                 ; 6       ;
-;      - Selector6~0      ; 1                 ; 6       ;
-;      - Selector6~1      ; 1                 ; 6       ;
-;      - state.DelayOut~0 ; 1                 ; 6       ;
+;      - Selector5~1      ; 0                 ; 6       ;
+;      - Selector5~2      ; 0                 ; 6       ;
+;      - Selector3~0      ; 0                 ; 6       ;
+;      - Selector4~0      ; 0                 ; 6       ;
+;      - Selector7~0      ; 0                 ; 6       ;
+;      - Selector7~1      ; 0                 ; 6       ;
+;      - Selector6~0      ; 0                 ; 6       ;
+;      - Selector6~1      ; 0                 ; 6       ;
+;      - state.DelayOut~0 ; 0                 ; 6       ;
 +-------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                            ;
-+------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Name             ; Location           ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Clk_10k          ; PIN_M1             ; 57      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; TempCount[15]~18 ; LCCOMB_X23_Y26_N14 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; dataout~1        ; LCCOMB_X24_Y26_N24 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; reset            ; PIN_M2             ; 57      ; Async. clear              ; yes    ; Global Clock         ; GCLK1            ; --                        ;
-; state.Measure    ; LCFF_X23_Y26_N23   ; 37      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-+------------------+--------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                        ;
++---------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name          ; Location          ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Clk_10k       ; PIN_M1            ; 57      ; Clock                     ; yes    ; Global Clock         ; GCLK3            ; --                        ;
+; TempCount~18  ; LCCOMB_X19_Y26_N2 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; dataout~1     ; LCCOMB_X20_Y26_N8 ; 16      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; reset         ; PIN_M2            ; 57      ; Async. clear              ; yes    ; Global Clock         ; GCLK1            ; --                        ;
+; state.Measure ; LCFF_X19_Y26_N19  ; 37      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
++---------------+-------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------------------------------+
@@ -997,9 +981,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name              ; Fan-Out     ;
 +-------------------+-------------+
 ; state.Measure     ; 37          ;
-; output            ; 18          ;
 ; UseTemp           ; 18          ;
-; TempCount[15]~18  ; 16          ;
+; TempCount~18      ; 16          ;
 ; dataout~1         ; 16          ;
 ; Hallsensor        ; 9           ;
 ; state.DelayIn     ; 9           ;
@@ -1011,6 +994,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; state.WaitHigh    ; 4           ;
 ; state.Rest        ; 3           ;
 ; TotalCount[0]     ; 3           ;
+; output            ; 2           ;
 ; Selector7~2       ; 2           ;
 ; Selector3~2       ; 2           ;
 ; Selector5~4       ; 2           ;
@@ -1164,30 +1148,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-----------------------+
 ; Other Routing Resource Type ; Usage                 ;
 +-----------------------------+-----------------------+
-; Block interconnects         ; 79 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 76 / 54,004 ( < 1 % ) ;
 ; C16 interconnects           ; 0 / 2,100 ( 0 % )     ;
-; C4 interconnects            ; 22 / 36,000 ( < 1 % ) ;
-; Direct links                ; 29 / 54,004 ( < 1 % ) ;
+; C4 interconnects            ; 20 / 36,000 ( < 1 % ) ;
+; Direct links                ; 28 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )       ;
 ; Local interconnects         ; 49 / 18,752 ( < 1 % ) ;
 ; R24 interconnects           ; 0 / 1,900 ( 0 % )     ;
-; R4 interconnects            ; 47 / 46,920 ( < 1 % ) ;
+; R4 interconnects            ; 38 / 46,920 ( < 1 % ) ;
 +-----------------------------+-----------------------+
 
 
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 14.20) ; Number of LABs  (Total = 5) ;
+; Number of Logic Elements  (Average = 11.83) ; Number of LABs  (Total = 6) ;
 +---------------------------------------------+-----------------------------+
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
+; 2                                           ; 1                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
+; 6                                           ; 1                           ;
 ; 7                                           ; 0                           ;
-; 8                                           ; 1                           ;
+; 8                                           ; 0                           ;
 ; 9                                           ; 0                           ;
 ; 10                                          ; 0                           ;
 ; 11                                          ; 0                           ;
@@ -1202,10 +1186,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+
 ; LAB-wide Signals                                                 ;
 +------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 2.60) ; Number of LABs  (Total = 5) ;
+; LAB-wide Signals  (Average = 2.50) ; Number of LABs  (Total = 6) ;
 +------------------------------------+-----------------------------+
-; 1 Async. clear                     ; 5                           ;
-; 1 Clock                            ; 5                           ;
+; 1 Async. clear                     ; 6                           ;
+; 1 Clock                            ; 6                           ;
 ; 1 Clock enable                     ; 2                           ;
 ; 1 Sync. clear                      ; 1                           ;
 +------------------------------------+-----------------------------+
@@ -1214,21 +1198,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 25.60) ; Number of LABs  (Total = 5) ;
+; Number of Signals Sourced  (Average = 21.33) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
+; 4                                            ; 1                           ;
 ; 5                                            ; 0                           ;
 ; 6                                            ; 0                           ;
 ; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
+; 8                                            ; 1                           ;
 ; 9                                            ; 0                           ;
 ; 10                                           ; 0                           ;
 ; 11                                           ; 0                           ;
-; 12                                           ; 1                           ;
+; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
@@ -1255,14 +1239,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +--------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 12.00) ; Number of LABs  (Total = 5) ;
+; Number of Signals Sourced Out  (Average = 10.00) ; Number of LABs  (Total = 6) ;
 +--------------------------------------------------+-----------------------------+
 ; 0                                                ; 0                           ;
 ; 1                                                ; 0                           ;
-; 2                                                ; 0                           ;
-; 3                                                ; 0                           ;
+; 2                                                ; 1                           ;
+; 3                                                ; 1                           ;
 ; 4                                                ; 0                           ;
-; 5                                                ; 1                           ;
+; 5                                                ; 0                           ;
 ; 6                                                ; 0                           ;
 ; 7                                                ; 0                           ;
 ; 8                                                ; 1                           ;
@@ -1280,7 +1264,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 12.80) ; Number of LABs  (Total = 5) ;
+; Number of Distinct Inputs  (Average = 10.83) ; Number of LABs  (Total = 6) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 0                           ;
@@ -1290,16 +1274,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 5                                            ; 0                           ;
 ; 6                                            ; 0                           ;
 ; 7                                            ; 0                           ;
-; 8                                            ; 1                           ;
+; 8                                            ; 2                           ;
 ; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
+; 10                                           ; 1                           ;
 ; 11                                           ; 0                           ;
 ; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
 ; 16                                           ; 0                           ;
-; 17                                           ; 1                           ;
+; 17                                           ; 0                           ;
 ; 18                                           ; 0                           ;
 ; 19                                           ; 0                           ;
 ; 20                                           ; 0                           ;
@@ -1353,7 +1337,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Sep 10 17:56:13 2013
+    Info: Processing started: Tue Sep 10 19:27:21 2013
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off PRODIGgroep4 -c PRODIGgroep4
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C15AF484C6 for design "PRODIGgroep4"
@@ -1386,9 +1370,9 @@ Critical Warning (169085): No exact pin location assignment(s) for 21 pins of 21
     Info (169086): Pin data[13] not assigned to an exact location on the device
     Info (169086): Pin data[14] not assigned to an exact location on the device
     Info (169086): Pin data[15] not assigned to an exact location on the device
-    Info (169086): Pin output not assigned to an exact location on the device
     Info (169086): Pin Clk_10k not assigned to an exact location on the device
     Info (169086): Pin reset not assigned to an exact location on the device
+    Info (169086): Pin output not assigned to an exact location on the device
     Info (169086): Pin enable not assigned to an exact location on the device
     Info (169086): Pin Hallsensor not assigned to an exact location on the device
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'PRODIGgroep4.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1451,9 +1435,9 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 600 megabytes
-    Info: Processing ended: Tue Sep 10 17:56:17 2013
-    Info: Elapsed time: 00:00:04
+    Info: Peak virtual memory: 603 megabytes
+    Info: Processing ended: Tue Sep 10 19:27:26 2013
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
 
