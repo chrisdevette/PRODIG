@@ -1,6 +1,6 @@
 Assembler report for PRODIGgroep4
-Mon Sep 09 12:44:12 2013
-Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
+Tue Sep 10 17:03:20 2013
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Editio
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/School/Github/PRODIG/PRODIGgroep4.sof
-  6. Assembler Device Options: C:/School/Github/PRODIG/PRODIGgroep4.pof
+  5. Assembler Device Options: C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.sof
+  6. Assembler Device Options: C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.pof
   7. Assembler Messages
 
 
@@ -19,7 +19,7 @@ Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Editio
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2011 Altera Corporation
+Copyright (C) 1991-2012 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Sep 09 12:44:12 2013 ;
+; Assembler Status      ; Successful - Tue Sep 10 17:03:20 2013 ;
 ; Revision Name         ; PRODIGgroep4                          ;
-; Top-level Entity Name ; ADC                                   ;
+; Top-level Entity Name ; HallCounter                           ;
 ; Family                ; Cyclone II                            ;
 ; Device                ; EP2C15AF484C6                         ;
 +-----------------------+---------------------------------------+
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------+
-; Assembler Generated Files                ;
-+------------------------------------------+
-; File Name                                ;
-+------------------------------------------+
-; C:/School/Github/PRODIG/PRODIGgroep4.sof ;
-; C:/School/Github/PRODIG/PRODIGgroep4.pof ;
-+------------------------------------------+
++--------------------------------------------------------+
+; Assembler Generated Files                              ;
++--------------------------------------------------------+
+; File Name                                              ;
++--------------------------------------------------------+
+; C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.sof ;
+; C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.pof ;
++--------------------------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Assembler Device Options: C:/School/Github/PRODIG/PRODIGgroep4.sof ;
-+----------------+---------------------------------------------------+
-; Option         ; Setting                                           ;
-+----------------+---------------------------------------------------+
-; Device         ; EP2C15AF484C6                                     ;
-; JTAG usercode  ; 0xFFFFFFFF                                        ;
-; Checksum       ; 0x001B2126                                        ;
-+----------------+---------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.sof ;
++----------------+-----------------------------------------------------------------+
+; Option         ; Setting                                                         ;
++----------------+-----------------------------------------------------------------+
+; Device         ; EP2C15AF484C6                                                   ;
+; JTAG usercode  ; 0xFFFFFFFF                                                      ;
+; Checksum       ; 0x001B0560                                                      ;
++----------------+-----------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------+
-; Assembler Device Options: C:/School/Github/PRODIG/PRODIGgroep4.pof ;
-+--------------------+-----------------------------------------------+
-; Option             ; Setting                                       ;
-+--------------------+-----------------------------------------------+
-; Device             ; EPCS16                                        ;
-; JTAG usercode      ; 0x00000000                                    ;
-; Checksum           ; 0x1DD99E3F                                    ;
-; Compression Ratio  ; 3                                             ;
-+--------------------+-----------------------------------------------+
++----------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Mark/Documents/GitHub/PRODIG/PRODIGgroep4.pof ;
++--------------------+-------------------------------------------------------------+
+; Option             ; Setting                                                     ;
++--------------------+-------------------------------------------------------------+
+; Device             ; EPCS16                                                      ;
+; JTAG usercode      ; 0x00000000                                                  ;
+; Checksum           ; 0x1DD9E3C2                                                  ;
+; Compression Ratio  ; 3                                                           ;
++--------------------+-------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Assembler
-    Info: Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Sep 09 12:44:08 2013
+Info: Running Quartus II 64-Bit Assembler
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Sep 10 17:03:18 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PRODIGgroep4 -c PRODIGgroep4
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 302 megabytes
-    Info: Processing ended: Mon Sep 09 12:44:12 2013
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 425 megabytes
+    Info: Processing ended: Tue Sep 10 17:03:20 2013
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 

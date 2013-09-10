@@ -1,8 +1,9 @@
 <sld_project_info>
+  <project>
+    <hash md5_digest_80b="00000000000000000000"/>
+  </project>
   <file_info>
-    <file checksum="0x001B2126" device="EP2C15AF484C6" path="PRODIGgroep4.sof" usercode="0xFFFFFFFF"/>
-    <file checksum="0x1DD99E3F" device="EPCS16" path="PRODIGgroep4.pof" usercode="0x00000000"/>
+    <file checksum="0x001B0560" device="EP2C15AF484C6" path="PRODIGgroep4.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x1DD9E3C2" device="EPCS16" path="PRODIGgroep4.pof" usercode="0x00000000"/>
   </file_info>
-  <hub_info ir_width="0" node_count="0"/>
-  <node_info/>
 </sld_project_info>

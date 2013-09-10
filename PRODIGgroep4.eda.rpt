@@ -1,6 +1,6 @@
 EDA Netlist Writer report for PRODIGgroep4
-Mon Sep 09 12:44:14 2013
-Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
+Tue Sep 10 17:03:24 2013
+Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -17,7 +17,7 @@ Quartus II 32-bit Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Editio
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2011 Altera Corporation
+Copyright (C) 1991-2012 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Sep 09 12:44:14 2013 ;
+; EDA Netlist Writer Status ; Successful - Tue Sep 10 17:03:24 2013 ;
 ; Revision Name             ; PRODIGgroep4                          ;
-; Top-level Entity Name     ; ADC                                   ;
+; Top-level Entity Name     ; HallCounter                           ;
 ; Family                    ; Cyclone II                            ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,31 +66,31 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Simulation Generated Files                                            ;
-+-----------------------------------------------------------------------+
-; Generated Files                                                       ;
-+-----------------------------------------------------------------------+
-; C:/School/Github/PRODIG/simulation/modelsim/PRODIGgroep4.vho          ;
-; C:/School/Github/PRODIG/simulation/modelsim/PRODIGgroep4_fast.vho     ;
-; C:/School/Github/PRODIG/simulation/modelsim/PRODIGgroep4_vhd.sdo      ;
-; C:/School/Github/PRODIG/simulation/modelsim/PRODIGgroep4_vhd_fast.sdo ;
-+-----------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                          ;
++-------------------------------------------------------------------------------------+
+; Generated Files                                                                     ;
++-------------------------------------------------------------------------------------+
+; C:/Users/Mark/Documents/GitHub/PRODIG/simulation/modelsim/PRODIGgroep4.vho          ;
+; C:/Users/Mark/Documents/GitHub/PRODIG/simulation/modelsim/PRODIGgroep4_fast.vho     ;
+; C:/Users/Mark/Documents/GitHub/PRODIG/simulation/modelsim/PRODIGgroep4_vhd.sdo      ;
+; C:/Users/Mark/Documents/GitHub/PRODIG/simulation/modelsim/PRODIGgroep4_vhd_fast.sdo ;
++-------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
 ; EDA Netlist Writer Messages ;
 +-----------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit EDA Netlist Writer
-    Info: Version 11.1 Build 216 11/23/2011 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Sep 09 12:44:13 2013
+Info: Running Quartus II 64-Bit EDA Netlist Writer
+    Info: Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Sep 10 17:03:23 2013
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off PRODIGgroep4 -c PRODIGgroep4
-Info (204026): Generated files "PRODIGgroep4.vho", "PRODIGgroep4_fast.vho", "PRODIGgroep4_vhd.sdo" and "PRODIGgroep4_vhd_fast.sdo" in directory "C:/School/Github/PRODIG/simulation/modelsim/" for EDA simulation tool
-Info: Quartus II 32-bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 259 megabytes
-    Info: Processing ended: Mon Sep 09 12:44:14 2013
+Info (204026): Generated files "PRODIGgroep4.vho", "PRODIGgroep4_fast.vho", "PRODIGgroep4_vhd.sdo" and "PRODIGgroep4_vhd_fast.sdo" in directory "C:/Users/Mark/Documents/GitHub/PRODIG/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 381 megabytes
+    Info: Processing ended: Tue Sep 10 17:03:24 2013
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 
