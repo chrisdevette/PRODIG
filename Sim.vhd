@@ -48,7 +48,6 @@ begin
  wait for 10 us;
  reset <= '1';
  Busy <= '1';
- conv <= '0';
  DB <= "10101010";
  wait until Clk_10k = '1';
  wait for 10 us;
