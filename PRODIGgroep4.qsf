@@ -66,10 +66,8 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_global_assignment -name VHDL_FILE Control.vhd
-set_global_assignment -name VHDL_FILE Counter.vhd
 set_global_assignment -name VHDL_FILE seg_decoder.vhd
 set_global_assignment -name VHDL_FILE teller.vhd
-set_global_assignment -name VHDL_FILE vier7segmentdecoder.vhd
 set_location_assignment PIN_L8 -to SW[17]
 set_location_assignment PIN_L7 -to SW[16]
 set_location_assignment PIN_L4 -to SW[15]
