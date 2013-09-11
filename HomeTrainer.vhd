@@ -111,7 +111,10 @@ architecture structural of HomeTrainer is
 --	end component vier7segmentdecoder;
 
 signal reset, CLOCK_10, refresh, enable: std_logic;
-signal timerdata, countdata: unsigned(15 downto 0);
+signal countdata: unsigned(31 downto 0);
+signal tempcount, sec, min: unsigned(5 downto 0);
+signal hr: unsigned(6 downto 0);
+
 signal LCD_Data, ADC_Data: std_logic_vector(7 downto 0);
 signal LCD_RS, LCD_RW, LCD_E, Servo_Positive, Servo_Negative, ADC_ConvStart, ADC_RD, ADC_Busy, Hallsensor: std_logic;
 signal BikeButtons: std_logic_vector(6 downto 1);
@@ -144,11 +147,10 @@ begin
 		port map (clkin => CLOCK_50, reset => reset, clkout => CLOCK_10);
 
 	TotalTimer: Timer
-		port map (clk => CLOCK_10, enable => enable, reset => reset, refresh => refresh, data => timerdata);
+		port map (clk => CLOCK_10, enable => enable, reset => reset, refresh => refresh, tempcount => tempcount, sec => sec, min => min, hr => hr);
 
 	HallSensCount: HallCounter
-		port map (Clk_10k => CLOCK_10, reset => reset, Hallsensor => Hallsensor, refresh => refresh, enable => enable, data => countdata);
-
+		port map (Clk_10k => CLOCK_10, reset => reset, Hallsensor => Hallsensor, refresh => refresh, data => countdata);
 	
 --	CounterTop: Counter
 --		port map (clk => CLOCK_10, clear => clear, countdown => countdown, mins_up => mins_up, secs_up => secs_up, timezero => timezero, digit0 => digit0_2_data0, digit1 => digit1_2_data1, digit2 => digit2_2_data2, digit3 => digit3_2_data3);

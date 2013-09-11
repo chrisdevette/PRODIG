@@ -36,9 +36,7 @@ begin
 				when Rest =>
 								DelayCount <= 0;
 								CalcTick <= '0';
-								if enable = '1' then
-									state <= WaitLow;
-								end if;
+								state <= WaitLow;
 				when WaitLow =>
 								DelayCount <= 0;
 								CalcTick <= '0';

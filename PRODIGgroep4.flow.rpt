@@ -1,5 +1,5 @@
 Flow report for PRODIGgroep4
-Tue Sep 10 23:03:57 2013
+Wed Sep 11 21:16:11 2013
 Quartus II 64-Bit Version 12.1 Build 243 01/31/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Flow Summary                                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Flow Status                        ; Successful - Tue Sep 10 23:03:57 2013         ;
+; Flow Status                        ; Successful - Wed Sep 11 21:16:11 2013         ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 243 01/31/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; PRODIGgroep4                                  ;
 ; Top-level Entity Name              ; HomeTrainer                                   ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/10/2013 23:03:37 ;
+; Start date & time ; 09/11/2013 21:15:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PRODIGgroep4        ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 1099021569989.137884701717828         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 1099021569989.137892694907100         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_RUN_SCRIPT           ; Test.txt                              ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
@@ -95,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 494 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 494 MB              ; 00:00:02                           ;
 ; Fitter                    ; 00:00:10     ; 1.0                     ; 725 MB              ; 00:00:09                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 430 MB              ; 00:00:04                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 430 MB              ; 00:00:04                           ;
 ; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 394 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 376 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
+; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

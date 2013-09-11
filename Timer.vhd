@@ -19,10 +19,10 @@ signal TotalDelay : integer range 0 to 10000; -- Teldelay voor de totale tijd
 signal TotalSec : unsigned(5 downto 0);
 signal TotalMin : unsigned(5 downto 0);
 signal TotalHr : unsigned(6 downto 0);
-signal TempCount : unsigned(5 downto 0); -- Seconden met één cijfer achter de komma, als heel getal weergegeven (3.2 seconden -> 32), hoogste bit om aan te geven dat RPM < 20, en dus 0
+signal RefreshCount : unsigned(5 downto 0); -- Seconden met één cijfer achter de komma, als heel getal weergegeven (3.2 seconden -> 32), hoogste bit om aan te geven dat RPM < 20, en dus 0
 begin
 	
-	process (clk, reset) is
+	process (clk) is
 	begin
 		if rising_edge(clk) then
 			if reset = '1' then
@@ -30,13 +30,13 @@ begin
 				TotalSec <= "000000";
 				TotalMin <= "000000";
 				TotalHr <= "0000000";
-				TempCount <= "00000";
+				RefreshCount <= "000000";
 			elsif enable = '1' then
 				if refresh = '1' then
-					TempCount <= "000000";
+					RefreshCount <= "000000";
 				else
-					if TempCount < 63 then
-						TempCount <= TempCount + 1;
+					if RefreshCount < 63 then
+						RefreshCount <= RefreshCount + 1;
 					end if;
 				end if;
 				
@@ -62,6 +62,6 @@ begin
 	sec <= TotalSec;
 	min <= TotalMin;
 	hr <= TotalHr;
-	tempcount <= TempCount;
+	tempcount <= RefreshCount;
 	
 end structural;
