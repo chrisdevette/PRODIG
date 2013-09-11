@@ -70,6 +70,20 @@ architecture structural of HomeTrainer is
 				data 			: out unsigned(31 downto 0)
 				);
 	end component HallCounter;
+	component SequentialDevider is
+		port(	clk 	 		: in std_logic;
+				reset			: in std_logic;
+				refresh 		: in std_logic;
+				outputtotal	: in std_logic;
+				tempcount	: in unsigned(5 downto 0);
+				sec			: in unsigned(5 downto 0);
+				min			: in unsigned(5 downto 0);
+				hr				: in unsigned(6 downto 0);
+				Halldata 	: in unsigned(31 downto 0);
+				CurrentRPM	: out unsigned(7 downto 0);
+				TotAvgRPM	: out unsigned(7 downto 0)
+				);
+	end component SequentialDevider;
 
 --	component Control is
 --		 port (clk:    	in std_logic;
@@ -110,10 +124,11 @@ architecture structural of HomeTrainer is
 --				);
 --	end component vier7segmentdecoder;
 
-signal reset, CLOCK_10, refresh, enable: std_logic;
+signal reset, CLOCK_10, refresh, enable, outputtotal: std_logic;
 signal countdata: unsigned(31 downto 0);
 signal tempcount, sec, min: unsigned(5 downto 0);
 signal hr: unsigned(6 downto 0);
+signal CurrentRPM, TotAvgRPM : unsigned(7 downto 0);
 
 signal LCD_Data, ADC_Data: std_logic_vector(7 downto 0);
 signal LCD_RS, LCD_RW, LCD_E, Servo_Positive, Servo_Negative, ADC_ConvStart, ADC_RD, ADC_Busy, Hallsensor: std_logic;
@@ -151,6 +166,10 @@ begin
 
 	HallSensCount: HallCounter
 		port map (Clk_10k => CLOCK_10, reset => reset, Hallsensor => Hallsensor, refresh => refresh, data => countdata);
+
+	Devider:	SequentialDevider
+		port map (clk => CLOCK_10, reset => reset, refresh => refresh, outputtotal => outputtotal, tempcount => tempcount, sec => sec, min => min, hr => hr, Halldata => countdata, CurrentRPM => CurrentRPM, TotAvgRPM => TotAvgRPM);
+		
 	
 --	CounterTop: Counter
 --		port map (clk => CLOCK_10, clear => clear, countdown => countdown, mins_up => mins_up, secs_up => secs_up, timezero => timezero, digit0 => digit0_2_data0, digit1 => digit1_2_data1, digit2 => digit2_2_data2, digit3 => digit3_2_data3);

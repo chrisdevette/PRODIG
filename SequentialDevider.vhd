@@ -21,7 +21,8 @@ end entity SequentialDevider;
 architecture hardware of SequentialDevider is
 signal TempBottom, TempTop : unsigned(9 downto 0);
 signal TotBottom, TotTop, TotSecs : unsigned(31 downto 0);
-signal TempRPM_Calc, TempRPM_Final, TotRPS_Calc, TotRPM_Final: unsigned(7 downto 0);
+signal TempRPM_Calc, TempRPM_Final, TotRPM_Final: unsigned(7 downto 0);
+signal TotRPS_Calc : unsigned (3 downto 0);
 signal TempRunning, TotRunning : std_logic;
 constant RPM_Constant: unsigned := "1001011000";
 
@@ -51,10 +52,10 @@ begin
 			end if;
 
 			if TotRunning = '0' and outputtotal = '1' then
-				TotSecs <= sec + ((min + (hr * 60)) * 60);
+				TotSecs <= "0000" & (sec + ((min + (hr * 60)) * 60));
 				TotBottom <= Totsecs;
 				TotTop <= Halldata;
-				TotRPS_Calc <= "00000000";
+				TotRPS_Calc <= "0000";
 				TotRunning <= '1';
 			else
 				if TotTop > TotBottom then
