@@ -55,17 +55,19 @@ architecture structural of HomeTrainer is
 		port (clk:			in std_logic;
 				enable:		in std_logic;
 				reset:		in std_logic;
-				refresh:		out std_logic;
-				data:			out unsigned(15 downto 0)
+				refresh:		in std_logic;
+				tempcount:	out unsigned(5 downto 0); -- Seconden met één cijfer achter de komma voor berekening huidige RPM
+				sec:			out unsigned(5 downto 0);
+				min:			out unsigned(5 downto 0);
+				hr:			out unsigned(6 downto 0)
 				);
 	end component Timer;
 	component HallCounter is
 		port(	Clk_10k 	 	: in std_logic;
 				reset			: in std_logic;
 				Hallsensor  : in std_logic;
-				refresh 		: in std_logic; -- Signals to refresh output to new value
-				enable 		: in std_logic;
-				data 			: out unsigned(15 downto 0)
+				refresh 		: out std_logic; -- Signals sequential devider to refresh output to new value
+				data 			: out unsigned(31 downto 0)
 				);
 	end component HallCounter;
 
